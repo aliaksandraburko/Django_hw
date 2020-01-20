@@ -6,16 +6,30 @@ from django.template import loader
 
 
 # Create your views here.
+from myapp1.forms import UserForm
+
+def user_view(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            firstname = data.get('firstname')
+            lastname = data.get('lastname')
+            age = data.get('age')
+            comment = data.get('comment')
+            result = f'{firstname}|{lastname}|{age}|{comment}'
+            print(result)
+        else:
+            errors_dict = form.errors
+            template = loader.get_template('index.html')
+            return HttpResponse(template.render({'errors': errors_dict}, request))
+    form = UserForm()
+    context = {'form': form}
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render(context, request))
+    form = UserForm()
+    context = {'form': form}
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render(context, request))
 
 
-def index(request):
-    if request.method == 'GET':
-        template = loader.get_template('index.html')
-        return HttpResponse(template.render(request=request))
-    elif request.method == 'POST':
-        field = [request.POST.get('firstname'), request.POST.get('lastname'), request.POST.get('age'),
-                 request.POST.get('comment')]
-        print(field)
-        template = loader.get_template('index.html')
-
-        return HttpResponse(template.render(request=request))

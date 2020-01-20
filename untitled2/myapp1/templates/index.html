@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<form action="http://127.0.0.1:8000/index" method="POST">
-    <input type="text" name="firstname" placeholder="firstname"/><br>
-    <input type="text" name="lastname" placeholder="lastname"/><br>
-    <input type="number" name="age" placeholder="age"/><br>
-    <input type="text" name="comment" placeholder="text"/><br>
+{% block title %} Index {% endblock %}
+
+{% block content %}
+
+    <form action={% url "index" %} method="POST">
+   {{ form.as_p }}
+
     <input type="submit" value="Save"/>
 </form>
 
-</body>
-</html>
-
-
+{% endblock %}

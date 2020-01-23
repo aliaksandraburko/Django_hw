@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp1',
     'django_extensions',
-    'cw21'
+    'cw21',
+    'cw22',
+    'hw22'
 ]
 
 MIDDLEWARE = [

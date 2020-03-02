@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+
+    <!--style-->
+    <style>
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+            0 6px 8px 0 rgba(0, 0, 0, 0.39);
+            background: cadetblue;
+            margin-bottom: 5%;
+            border-radius: 17px;
+            padding: 2%;
+            overflow: auto;
+            resize: both;
+            text-overflow: ellipsis;
+        }
+
+        .card:hover {
+            background: darkseagreen;
+        }
+
+        .submit_form {
+
+            text-align: center;
+            padding: 3%;
+            background: seagreen;
+            border-radius: 25px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1),
+            0 6px 8px 0 rgba(0, 0, 0, 0.16);
+        }
+    </style>
+
+</head>
+
+<body class="container-fluid">
+
+<center class="row">
+    <p><font size="15" color="Gray" face="Georgia">Clinics "Sacred Heart"</font>
+    <p>
+
+    <hr/>
+
+
+
+
+<style type="text/css">
+   TABLE {
+    width: 1200px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+  </style>
+ </head>
+ <body>
+  <table>
+   <tr>
+    <th>Dr. Kelso</th><th>Dr. Turk</th><th>Dr. Dorian</th><th>Dr. Cox </th>
+       <tr>
+
+    <th>head doctor</th><th>surgeon</th><th>general doctor</th><th>general doctor</th>
+      <tr>
+    <th><a href="{% url 'select' %}"> Select Dr. Kelso </a></th><th><a href="{% url 'select' %}"> Select Dr. Turk </a></th><th><a href="{% url 'select' %}"> Select Dr. Dorian </a></th><th><a href="{% url 'select' %}"> Select Dr. Cox </a></th>
+   <tr>
+
+
+
+  </table>
+ </body>
+</html>
+

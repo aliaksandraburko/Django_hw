@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Send EMAIL {% endblock %}
+
+{% block content %}
+<body class="container-fluid">
+
+<body class="row">
+    <p><font size="5" color="Gray" face="Georgia">Here you can leave your email address. We will send you a reminding who your doctor is.</font>
+    <p>
+
+    <hr/>
+<form action={% url 'home' %} method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send">
+</form>
+
+
+
+</body>
+
+{% endblock %}

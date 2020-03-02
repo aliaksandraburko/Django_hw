@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Patient {% endblock %}
+
+{% block content %}
+
+    {% if errors %}
+        {{ errors }}
+    {% endif %}
+
+    <form action={% url "send_email" %} method="POST">
+    {{ form.as_p }}
+    <input type="submit" value="OK"/>
+    </form>
+{% endblock %}
+
+
+
